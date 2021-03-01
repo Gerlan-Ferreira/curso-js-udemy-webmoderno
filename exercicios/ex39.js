@@ -1,27 +1,19 @@
-const vetor1 = [1,3]
-const vetor2 = [5,6]
-trocarElementosArray = (vetor1, vetor2) => {
-    
-    let recebeVetor1 = []
-    let recebeVetor2 = []
-   
-    for (let i = 0; i < vetor1.length; i++){
-        
-        recebeVetor1.push(vetor1[i])
-
+function trocaValores(vetorA, vetorB) {
+    if (vetorA.length == vetorB.length) {
+        for(let i = 0; i < vetorA.length; i++){
+            vetorA[i] = vetorA[i] + vetorB[i]
+            vetorB[i] = vetorA[i] - vetorB[i]
+            vetorA[i] = vetorA[i] - vetorB[i]
+        }
+    } else {
+        return 'Vetores de tamanhos diferentes.'
     }
 
-    for (let j = 0; j < vetor2.length; j++){
-
-        recebeVetor2.push(vetor2[j])
-    }
-
-    console.log(recebeVetor1)
-    console.log(recebeVetor2)
-
-    //vetor1.push(recebeVetor2)
-    //vetor2.push(recebeVetor1)
-
+    console.log('Novo vetor A: ' + vetorA)
+    console.log('Novo vetor B: ' + vetorB)
 }
 
-console.log(trocarElementosArray(vetor1, vetor2))
+let vetorA = [1, 2, 3]
+let vetorB = [4, 5, 6]
+
+trocaValores(vetorA, vetorB)
